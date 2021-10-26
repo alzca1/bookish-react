@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
 
 function App() {
   return (
@@ -6,6 +6,10 @@ function App() {
       <Typography variant="h2" component="h2" data-test="heading">
         Bookishhhh
       </Typography>
+      <div data-test="book-list">
+        <div className="book-item"></div>
+        <div className="book-item"></div>
+      </div>
     </div>
   );
 }
