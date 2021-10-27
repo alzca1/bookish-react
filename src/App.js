@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Typography from "@material-ui/core/Typography";
 import BookListContainer from "./BookListContainer";
+import { Route, Switch } from "react-router";
+import BookDetailContainer from "./BookDetailContainer";
 
 function App() {
   return (
@@ -9,6 +11,10 @@ function App() {
         Bookishhhh
       </Typography>
       <BookListContainer />
+      <Switch>
+    <Route exact path="/" component={BookListContainer} />
+    <Route path="/books/:id" component={BookDetailContainer} />
+      </Switch>
     </div>
   );
 }

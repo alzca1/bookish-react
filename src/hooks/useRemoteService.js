@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useRemoteService = (initial) => {
+export const useRemoteService = (url, initial) => {
   const [data, setData] = useState(initial);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -10,7 +10,7 @@ export const useRemoteService = (initial) => {
       setError(false);
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:8080/books");
+        const res = await axios.get(url);
         setData(res.data);
       } catch (error) {
         setError(true);

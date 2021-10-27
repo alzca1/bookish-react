@@ -1,4 +1,3 @@
-const { NextWeek } = require("@material-ui/icons");
 const jsonServer = require("json-server");
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
@@ -14,8 +13,8 @@ server.use((req, res, next) => {
   }
 });
 
-server.use(middlewares); 
-server.use(router); 
+server.use(middlewares);
+server.use(router);
 server.listen(8080, () => {
-    console.log("JSON server is running")
-})
+  console.log("JSON server is running");
+});

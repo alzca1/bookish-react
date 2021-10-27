@@ -52,4 +52,13 @@ describe("Bookish application", () => {
       ]);
     });
   });
+  it("Goes to the detail page", () => {
+    // vamos a la url
+    cy.visit("http://localhost:3000/");
+    // buscamos el primer View Details que encontremos y clickamos
+    cy.get("div.book-item").contains("View Details").eq(0).click();
+    // la url debería incluir el fragmento "/books/1"
+    cy.url().should("include", "/books/1");
+    cy.get("h2.book-title").contains("Refactoring");
+  });
 });
