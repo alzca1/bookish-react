@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import BookList from "./BookList/BookList";
+import BookList from "./BookList";
 
 describe("BookList", () => {
     // testamos si el componente carga el loading
